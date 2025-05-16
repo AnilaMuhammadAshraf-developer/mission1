@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mission1/utils/app_color.dart';
+import 'package:mission1/utils/app_constant.dart';
 
 
 class AppDrawer extends StatelessWidget{
@@ -17,8 +19,50 @@ class AppDrawer extends StatelessWidget{
           child:Column(
             children: [
               DrawerHeader(
-                child:Text("Menu")
-              ),
+               decoration: BoxDecoration(
+                color:AppColor.appMainColor,
+               ),
+                
+ 
+                child:Align(
+                  alignment: Alignment.topLeft,
+                 child:Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    CircleAvatar(
+                      child:Icon(Icons.person),
+                     
+                    ),
+                     Text("Joseph Smith",style:TextStyle(color:AppColor.appTextColor)),
+                       Text("josephsmith@getnada.com",style:TextStyle(color:AppColor.appTextColor)),
+                      
+                  ],
+                 ),
+               
+                ),
+                
+                ),
+           
+              
+
+              ...AppConstant.pages.asMap().entries.map((entry) {
+                  int index = entry.key;
+                  var item = entry.value;
+                   bool isSelected = selectedIndex == index;
+                  return ListTile(
+                      title: Text(item['title'],style:TextStyle(color:isSelected ? AppColor.appTextColor : null)),
+                      tileColor: isSelected ? AppColor.appMainColor : null,
+                      onTap: () { 
+                        Navigator.pop(context);
+                        onTap(index);
+                      },
+                  );
+
+              }).toList(),
+              Spacer(),
+              // Image.asset('')
             ],
           ),
          );

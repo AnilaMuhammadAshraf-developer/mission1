@@ -14,9 +14,11 @@ class _MasterScreenState extends State<MasterScreen>{
   int selectedIndex=0;
   
   void onSelected(index){
+    debugPrint("index : han ${index}");
      setState(() {
          selectedIndex=index;
      });
+
   }
   @override
   Widget build(BuildContext context){
