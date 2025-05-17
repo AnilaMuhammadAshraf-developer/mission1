@@ -6,11 +6,13 @@ import 'package:mission1/utils/app_constant.dart';
 class AppDrawer extends StatelessWidget{
   final int selectedIndex;
   final Function(int) onTap;
+  final String? email;
   const AppDrawer(
     {
       super.key,
       required this.selectedIndex,
-      required this.onTap
+      required this.onTap,
+      this.email
     }
   );
   @override 
@@ -31,9 +33,9 @@ class AppDrawer extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-                    CircleAvatar(
-                      child:Icon(Icons.person),
-                     
+                    ClipRRect(
+                      child:Image.asset("assets/images/person.png",width:70,height:70),
+                    
                     ),
                      Text("Joseph Smith",style:TextStyle(color:AppColor.appTextColor)),
                        Text("josephsmith@getnada.com",style:TextStyle(color:AppColor.appTextColor)),
@@ -62,7 +64,19 @@ class AppDrawer extends StatelessWidget{
 
               }).toList(),
               Spacer(),
-              // Image.asset('')
+               Container(
+              width:MediaQuery.of(context).size.width,
+              height:90,
+              
+              decoration: BoxDecoration(
+                color:AppColor.appMainColor,
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(90))
+              
+
+              ),
+             
+             ),
+            
             ],
           ),
          );

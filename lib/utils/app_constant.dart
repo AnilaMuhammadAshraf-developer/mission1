@@ -10,19 +10,19 @@ class AppConstant{
     {
       "title":"Welcome To Mission1 App",
       "label":"Home",
-      "widget":HomeScreen(),
+      "builder":HomeScreen(),
       "icon":Icon(Icons.home)
     },
      {
       "title":"Mission",
       "label":"Mission",
-      "widget":MissionScreen(),
+      "builder": (String? email)=>MissionScreen(email: email),
       "icon":Icon(Icons.task)
     },
     {
       "title":"Next Screen",
       "label":"Next",
-      "widget":NextScreen(),
+      "builder":NextScreen(),
       "icon":Icon(Icons.next_plan)
     }
   ];

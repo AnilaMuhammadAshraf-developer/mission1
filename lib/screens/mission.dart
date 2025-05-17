@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class MissionScreen extends StatelessWidget{
-  const MissionScreen({super.key});
+  final String? email;
+  const MissionScreen({
+    super.key,
+     this.email
+    });
   @override
   Widget build(BuildContext context){
      return Center(
-          child:Text("Misssion Screeen")
+          child:Text("Misssion Screeen Data Received:$email")
      );
 
   }
